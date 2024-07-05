@@ -1,0 +1,12 @@
+{
+  "printWidth": 100,
+  "endOfLine": "lf",
+  "proseWrap": "always",
+  "arrowParens": "always",
+  "quoteProps": "as-needed",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "importOrder": ["<THIRD_PARTY_MODULES>", "", "^#/", "^~/", "^[../]", "^[./]"]
+}
