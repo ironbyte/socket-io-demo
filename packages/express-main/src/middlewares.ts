@@ -1,7 +1,7 @@
 import { type Socket } from 'socket.io';
 import { jwtDecode } from 'jwt-decode';
 
-import { redis } from './redis';
+import { redisClient } from './redis';
 
 // !This function authenticates a WebSocket connection using a JWT token,
 // !verifies the user's identity, and stores the user's information ({ userId, socketId }) in Redis
@@ -16,7 +16,7 @@ export const authenticate = async (socket: Socket, next: (err?: Error) => void) 
     console.error('Authentication failed', socket.handshake);
     return next(new Error('Authentication failed'));
   }
-  await redis.set(`user:${socket.id}`, JSON.stringify({ id: userId, socketId: socket.id }));
+  await redisClient.set(`user:${socket.id}`, JSON.stringify({ id: userId, socketId: socket.id }));
 
   next();
 };

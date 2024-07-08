@@ -1,19 +1,18 @@
 {
-  "name": "hono-socket-io-demo",
+  "name": "@ironbyte/monorepo",
+  "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev:main": "pnpm run --filter '@ironbyte/express-main' dev",
+    "dev:builds": "pnpm run --filter '@ironbyte/express-builds' dev",
+    "dev:all": "pnpm npm-run-all -p dev:main dev:builds"
   },
   "dependencies": {
-    "@tsconfig/node20": "^20.1.4",
-    "express": "4",
-    "ioredis": "^5.4.1",
-    "jwt-decode": "^4.0.0",
-    "socket.io": "^4.7.5"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.11.17",
-    "@types/ws": "^8.5.10",
+    "npm-run-all": "^4.1.5",
     "tsx": "^4.7.1"
+  },
+  "packageManager": "pnpm@9.4.0",
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "typescript": "^5.3.3"
   }
 }

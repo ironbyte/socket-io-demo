@@ -7,6 +7,5 @@
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "all",
-  "bracketSpacing": true,
-  "importOrder": ["<THIRD_PARTY_MODULES>", "", "^#/", "^~/", "^[../]", "^[./]"]
+  "bracketSpacing": true
 }
