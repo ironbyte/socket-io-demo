@@ -13,6 +13,9 @@ const io = createIo(server);
 
 io.on('connection', async (socket: Socket) => {
   console.log(`User with socket id - ${socket.id} connected to "${socket.nsp.name}" namespace: `);
+  const token = socket.handshake.auth.token;
+
+  console.log('token: ', token);
 });
 
 const buildsNamespace = io.of('/builds');
@@ -23,9 +26,7 @@ redisSubscriber.subscribe('ch:Builds');
 
 redisSubscriber.on('message', (channel, message) => {
   if (channel === 'ch:Builds') {
-    console.log('EMITTING');
-
-    buildsNamespace.to(`build:${5}`).emit('build:status:changed', JSON.parse(message));
+    buildsNamespace.to(`build:${30}`).emit('build:status:changed', JSON.parse(message));
   }
 });
 

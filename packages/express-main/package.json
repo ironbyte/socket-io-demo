@@ -3,7 +3,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "DEBUG=engine,socket.io* tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts"
   },
   "dependencies": {
     "express": "4",
